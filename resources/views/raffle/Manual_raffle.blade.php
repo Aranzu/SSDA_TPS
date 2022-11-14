@@ -83,7 +83,7 @@
                         <h3 class="blue_tps"><i class="fa-solid fa-envelopes-bulk me-3"></i></i>Seleccione Destinatarios:</h3>
                         <p>Puedes escoger el/los destinatario(s) de la siguiente lista.</p>
                         <div class="table-responsive">
-                            <table class="table table-bordered">
+                            <table id="tabla_destinatarios" class="table table-bordered">
                                 <thead class="text-center blue_tps_bg text-white">
                                     <tr>
                                         <th scope="col" class="text-center">

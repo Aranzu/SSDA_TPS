@@ -81,11 +81,7 @@ class ManualRaffleController extends Controller
                     Mail::to($DestinatariosEscogidos)->send(new Mailsend($data_sorteados));
                 }
             }
-            Log::info($_POST['ExtraRecipientsArr']);
-            //$mail_send=$request->mail_form;
-            //Log::info($mail_send);
-            //Mail::to($mail_send)->send(new Mailsend($data_sorteados));
-            //}
+            //Log::info($_POST['ExtraRecipientsArr']);
         }
         catch (\Throwable $th) {
         }

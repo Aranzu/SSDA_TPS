@@ -21,14 +21,14 @@
         <div class="card shadow">
             <div class="card-body text-start">
                 <h5 class="card-title text-center">Total de sorteos realizados por el usuario:</h5>
-                <p class="card-text big_icons blue_tps text-center">
+                <p class="card-text  font_24 blue_tps text-center">
                     @php
                         $valor_sorteo=0;
                         if (isset($raffle_count)) {
                             $valor_sorteo=$raffle_count;
                         }
                     @endphp
-                    <i class="fa-solid fa-clipboard-check"></i> {{$valor_sorteo}}
+                    <i class="fa-regular fa-address-book me-2"></i>{{$valor_sorteo}}
                 </p>
                 <!--<a href="#" class="btn btn-primary">ver tabla</a>-->
             </div>
@@ -37,15 +37,15 @@
     <div class="col-md-4">
         <div class="card shadow">
             <div class="card-body text-start">
-                <h5 class="card-title text-center">Fecha y hora del ultimo sorteo realizado por el usuario:</h5>
-                <p class="card-text text-center">
+                <h5 class="card-title text-center">Último sorteo realizado por el usuario:</h5>
+                <p class="card-text  font_24 blue_tps text-center">
                     @php
                         $valor_time = "No hay fecha de sorteo";
                         if (isset($time_raf)) {
                             $valor_time=$time_raf;
                         }
                     @endphp
-                    <i class="bi bi-people mr-3"></i>{{$valor_time}}
+                    <i class="fa-regular fa-clock me-2"></i>{{$valor_time}}
                 </p>
             </div>
         </div>
@@ -53,15 +53,15 @@
     <div class="col-md-4">
         <div class="card shadow">
             <div class="card-body text-start">
-                <h5 class="card-title text-center">Cargo</h5>
-                <p class="card-text text-center">
+                <h5 class="card-title text-center">Cargo actual del Usuario:</h5>
+                <p class="card-text font_24 blue_tps text-center">
                     @php
                         $valor_pos = "No hay cargo asociado";
                         if (isset($position)) {
                             $valor_pos=$position;
                         }
                     @endphp
-                    <i class="bi bi-people mr-3"></i>{{$valor_pos}}
+                    <i class="fa-regular fa-address-card me-2"></i>{{$valor_pos}}
                 </p>
             </div>
         </div>

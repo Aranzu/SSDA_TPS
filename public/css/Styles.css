@@ -113,6 +113,9 @@ select, option, input::placeholder, input{
 .font_24{
     font-size: 24px!important;
 }
+.font_25{
+    font-size: 25px!important;
+}
 .font_14{
     font-size: 20px!important;
     text-shadow: 3px 3px black;
@@ -273,4 +276,8 @@ i .big-icon{
 }
 .hide_style:focus{
     outline: none;
+}
+
+.swal2-loader{
+    border-color:#144578 rgba(0,0,0,0) #144578 rgba(0,0,0,0)!important;
 }

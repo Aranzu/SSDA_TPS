@@ -8,14 +8,14 @@
                         <div class="card-body p-md-5">
                             <div class="row justify-content-center">
                                 <section>
-                                    <h3 class="text-center mb-4 pb-2 text-primary fw-bold">Preguntas Frecuentes</h3>
+                                    <h3 class="text-center mb-4 pb-2 blue_tps fw-bold">Preguntas Frecuentes</h3>
                                     <p class="text-center mb-5">
                                     Encuentra respuesta a las preguntas más frecuentes para el uso de la plataforma
                                     </p>
 
                                     <div class="row">
                                     <div class="col-md-6 col-lg-4 mb-4">
-                                        <h6 class="mb-3 text-primary"><i class="far fa-paper-plane text-primary pe-2"></i> Que es el sistema de sorteo de test de drogas y alcohol (SSDA)?</h6>
+                                        <h6 class="mb-3 blue_tps"><i class="fa-solid fa-paper-plane"></i> Que es el sistema de sorteo de test de drogas y alcohol (SSDA)?</h6>
                                         <p>
                                         Este sistema te permite realizar los sorteos de test de drogas y alcohol en los trabajadores de TPS, exceptuando
                                         aquellos con permiso, licencia o vacaciones.
@@ -23,7 +23,7 @@
                                     </div>
 
                                     <div class="col-md-6 col-lg-4 mb-4">
-                                        <h6 class="mb-3 text-primary"><i class="fas fa-pen-alt text-primary pe-2"></i> Cómo puedo acceder al sistema?</h6>
+                                        <h6 class="mb-3 blue_tps"><i class="fas fa-pen-alt blue_tps pe-2"></i> Cómo puedo acceder al sistema?</h6>
                                         <p>
                                         Debes solicitar tu registro al administrador, quien te conferirá acceso al sistema. Para el registro el adminsitrador o funcionario designado debe
                                         con tu Nombre, Rut, correo electronico y cargo. Tendras un nombre de usuario y contraseña que te seran conferidas por el administrador
@@ -31,17 +31,17 @@
                                     </div>
 
                                     <div class="col-md-6 col-lg-4 mb-4">
-                                        <h6 class="mb-3 text-primary"><i class="fas fa-user text-primary pe-2"></i> Cómo puedo realizar el sorteo?
+                                        <h6 class="mb-3 blue_tps"><i class="fas fa-user blue_tps pe-2"></i> Cómo puedo realizar el sorteo?
                                         </h6>
                                         <p>
-                                        Una vez registrada tu cuenta podras ingresar con tus credenciales, seleccionar la opción "Sorteo Automatico", luego elegir el porcentaje de selección a aplicar
+                                        Una vez registrada tu cuenta podras ingresar con tus credenciales, seleccionar la opción "Sorteo Automático", luego elegir el porcentaje de selección a aplicar
                                          y finalmente presionar el boton "Realizar Sorteo". Una vez realizado, debes seleccionar los correos destinatarios de la lista de sorteados y presionar Guardar y Enviar.
                                     </p>
                                         </p>
                                     </div>
 
                                     <div class="col-md-6 col-lg-4 mb-4">
-                                        <h6 class="mb-3 text-primary"><i class="fas fa-rocket text-primary pe-2"></i> Qué pasa si el sorteo automatico no funciona?
+                                        <h6 class="mb-3 blue_tps"><i class="fas fa-rocket blue_tps pe-2"></i> Qué pasa si el sorteo automático no funciona?
                                         </h6>
                                         <p>
                                         Puede realizar el sorteo de forma "manual". Para ello obtienes la información de los trabajadores de Buk, necesitas crear un excel
@@ -51,7 +51,7 @@
                                     </div>
 
                                     <div class="col-md-6 col-lg-4 mb-4">
-                                        <h6 class="mb-3 text-primary"><i class="fas fa-home text-primary pe-2"></i> Cómo puedo ver los sorteos que ya he realizado?
+                                        <h6 class="mb-3 blue_tps"><i class="fas fa-home blue_tps pe-2"></i> Cómo puedo ver los sorteos que ya he realizado?
                                         </h6>
                                         Debes seleccionar la opción "Historial", ahi podrás ingresar el rango de fecha correspondiente a los sorteos que quieres buscar.
                                         Luego al ver los resultados, puedes presionar ver detalle y observaras los resultados, los cuales puedes exportar en un documento.
@@ -59,10 +59,10 @@
                                     </div>
 
                                     <div class="col-md-6 col-lg-4 mb-4">
-                                        <h6 class="mb-3 text-primary"><i class="fas fa-book-open text-primary pe-2"></i> Como puedo obtener mayor información sobre el sistema?
+                                        <h6 class="mb-3 blue_tps"><i class="fas fa-book-open blue_tps pe-2"></i> Como puedo obtener mayor información sobre el sistema?
                                         </h6>
                                         <p>
-                                        Debes pedir al administrador o funcionario designado que te proporciones el manual de usuario, donde podras encontrar en detalle como funciona el sistema.    
+                                        Debes pedir al administrador o funcionario designado que te proporciones el manual de usuario, donde podras encontrar en detalle como funciona el sistema.
                                         </p>
                                     </div>
                                     </div>
