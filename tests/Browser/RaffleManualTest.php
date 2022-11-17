@@ -14,7 +14,9 @@ class RaffleManualTest extends DuskTestCase
      * @return void
      */
     public function test_manual_raffle()
-    {
+    {   
+        //Para esta prueba se requiere crear el usuario admin. Antes de ejecutar la prueba en la terminal ejecutar: php artisan migrate:fresh --seed
+
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
                     ->type('username', 'Admin')

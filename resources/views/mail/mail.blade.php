@@ -53,7 +53,7 @@
                     $date_sent = date("d-m-Y");
                 @endphp
                 @if (isset($date_sent))
-                <p style="color: black;">Junto con saludar, a continuación se muestran los trabajadores que han sido sorteados por el sistema SSDA, a la fecha {{$date_sent}}.</p>
+                <p style="color: black;">Junto con saludar, a continuación se muestran los trabajadores que han sido sorteados por el sistema SSTDA, a la fecha {{$date_sent}}.</p>
                 @endif
                 @if (isset($data))
                     <div align="center">

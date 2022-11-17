@@ -11,60 +11,32 @@ class LoginTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_page_login()
-    {
-        $response = $this->get('/login');
-
-        $response->assertStatus(200);
-    }
-
     public function test_login()
     {
-        $user = User::create([
-            'name'      =>'Manuel Rojas',
-            'rut'       =>'25615612',
-            'username'  =>'manuel',
-            'email'     =>'manuel@example.com',
-            'password'  =>'password',
-            'cargo'     =>'RRHH',
+        {
+            $user = User::create([
+                'name'      =>'Manuel Rojas',
+                'rut'       =>'25615612',
+                'username'  =>'manuel',
+                'email'     =>'manuel@example.com',
+                'password'  =>'password',
+                'cargo'     =>'RRHH',
+    
+            ]);
+            //$user = User::factory()->create();
+    
+            $response  = $this->post('/login', [
+                "username" => $user->username,
+                "password" =>"password"
+            ]);
 
-        ]);
-        //$user = User::factory()->create();
-
-        $credentials = [
-            "email" => $user->email,//"manuel@example.com",
-            "password" =>"password"
-        ];
-
-        $response = $this->post('/login', $credentials);
-
-        $response->assertRedirect('/');
-        $this->assertCredentials($credentials);
+            $this->assertAuthenticatedAs($user);
+            
+    
+            //$this->assertCredentials($credentials);
+    
+        }
 
     }
-
-
-    public function test_login_invalid_password()
-    {
-        $user = User::create([
-            'name'      =>'Manuel Rojas',
-            'rut'       =>'25615612',
-            'username'  =>'manolo',
-            'email'     =>'manuel@example.com',
-            'password'  =>'password',
-            'cargo'     =>'RRHH',
-
-        ]);
-        //$user = User::factory()->create();
-
-
-        $this->post('/login', [
-            'email' => $user->email,//'manuel@example.com',
-            'password' => 'wrong-password',
-        ]);
-
-        $this->assertGuest();
-    }
-
 
 }

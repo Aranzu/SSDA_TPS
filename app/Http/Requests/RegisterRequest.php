@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-
+use App\Rules\CheckRut;
 class RegisterRequest extends FormRequest
 {
     /**
@@ -24,13 +24,13 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required||between:5,30',
-            'rut'=> 'required|between:8,10',
-            'username' => 'required|between:5,10|unique:users,username',
+            'name' => 'required|between:5,30',
+            'rut'=> ['required', new CheckRut()],
+            'username' => ['required','max:20','unique:users,username'],
             'email' =>'required|unique:users,email',
             'password' => 'required|between:8,20',
             'password_confirmation' => 'required|same:password',
-            'cargo' => 'required|between:3,30'
+            'cargo' => ['required', 'max:35']
         ];
     }
 }

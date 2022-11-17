@@ -16,29 +16,45 @@ use Illuminate\Support\Facades\DB;
 
 
 class DeleteUserTest extends TestCase
-{
-    use DatabaseTransactions;
+{   
+    //Para esta prueba se requiere crear los roles. Antes de ejecutar la prueba en la terminal ejecutar: php artisan migrate:fresh --seed
+    
+    //use RefreshDatabase;
 
     public function test_user_delete()
     {
+    //para esta prueba requiere los roles, primero ejecutar: php artisan migrate:fresh --seed
+    //se crean 2 usuarios, uno admin y otro funcionario. el primero eliminará al segundo    
         $user = User::create([
+            'id'        =>'2',
             'name'      =>'Manuel Rojas',
             'rut'       =>'25615612',
-            'username'  =>'manuel',
+            'username'  =>'manolo',
             'email'     =>'manuel@example.com',
             'password'  =>'password',
             'cargo'     =>'RRHH',
 
-        ]);
+        ])->assignRole('Admin');//se le asigna rol de admin
 
-        $this->post("/deleteUser/{$user->id}")
-        ->assertRedirect('/showUsers');
+        $user2 = User::create([
+            'id'        =>'3',
+            'name'      =>'Fabian Rojas',
+            'rut'       =>'456464',
+            'username'  =>'fabi11123',
+            'email'     =>'fabi11123@example.com',
+            'password'  =>'password',
+            'cargo'     =>'RRHH',
 
-        $this->assertDatabaseMissing('users', ['id' => $user->id]);
+        ])->assignRole('Funcionario');
+
+        $this->actingAs($user)->post("/deleteUser/{$user2->id}")
+             ->assertRedirect('/showUsers');
+
+        $this->assertDatabaseMissing('users', ['id' => $user2->id]);
 
 
     }
-    }
+}
 
 
 

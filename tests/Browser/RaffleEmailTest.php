@@ -14,7 +14,8 @@ class RaffleEmailTest extends DuskTestCase
      * @return void
      */
     public function test_send_email()
-    //necesariamente hay que revisar la casilla de correo del destinatario para revisar si le llego el correo
+        //Para esta prueba se requiere crear el usuario admin. Antes de ejecutar la prueba en la terminal ejecutar: php artisan migrate:fresh --seed
+        //necesariamente hay que revisar la casilla de correo del destinatario para revisar si le llego el correo
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')

@@ -5,7 +5,7 @@
 
             <!--Section: Content-->
             <div class="container p-3 my-3 mt-3" style="background-color:none;">
-                <h1 class="text-center blue_tps font-weight-bold mb-3">Bienvenido al Sistema de Sorteo de Drogas y Alcohol.</h1>
+                <h1 class="text-center blue_tps font-weight-bold mb-3">Bienvenido al Sistema de Sorteo de Test de Drogas y Alcohol.</h1>
                 @guest
                 <p class="text-center blue_tps"><a href="/login" class="font-weight-bold blue_tps show_underline">¿Deseas Iniciar Sesión?</a></p>
                 @endguest

@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Contracts\Role;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role as ModelsRole;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
@@ -50,5 +53,17 @@ class User extends Authenticatable
 
     public function userLista(){
         return $this->hasMany(Lista::class);
-    } 
+    }
+
+    public function userRecipents(){
+        return $this->belongsToMany(Recipents::class);
+    }
+    
+    /*public function userModelHasRoles(){
+        return $this->hasMany(ModelsRole::class);
+    }*/
+
+    public function userModelHasPermission(){
+        return $this->hasMany(Permission::class);
+    }
 }

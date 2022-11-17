@@ -285,8 +285,13 @@ class ServeCommand extends Command
     protected function getDateFromLine($line)
     {
         preg_match('/^\[([^\]]+)\]/', $line, $matches);
-
-        return Carbon::createFromFormat('D M d H:i:s Y', $matches[1]);
+		
+		if (isset($matches[1])) {
+			// we have an result
+			return Carbon::createFromFormat('D M d H:i:s Y', $matches[1]);
+		}
+		// Return what you want if there isn't anything available.
+		return Carbon::now();
     }
 
     /**

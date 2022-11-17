@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\DB;
 
 class HistorialTest extends TestCase
 {   
-    use RefreshDatabase;
+    //Para esta prueba se requiere crear los roles. Antes de ejecutar la prueba en la terminal ejecutar: php artisan migrate:fresh --seed
     
+    //use RefreshDatabase;
     /**
      *
      * @test
@@ -22,7 +23,16 @@ class HistorialTest extends TestCase
 
     public function mostrar_trabajador_raffle(): void
     {
-        User::factory()->create();
+        $user = User::create([
+            'id'        =>'2',
+            'name'      =>'Manuel Rojas',
+            'rut'       =>'25615612',
+            'username'  =>'manolo',
+            'email'     =>'manuel@example.com',
+            'password'  =>'password',
+            'cargo'     =>'RRHH',
+
+        ])->assignRole('Admin');//se le asigna rol de admin
         
         Lista::factory()->create();
 
@@ -42,21 +52,8 @@ class HistorialTest extends TestCase
             ->where('lista_raffle.lista_id', '=', 1)
             ->get();
 
-        $response = $this->get(action([HistorialController::class, 'historialdetalle'], $listaRaffle->id));
+        $response = $this->actingAs($user)->get(action([HistorialController::class, 'historialdetalle'], $listaRaffle->id));
         $this->assertEquals($raffleResult, $response['query']);
-        
-        /*$this->get(action([HistorialController::class, 'historialdetalle'], $listaRaffle->id))
-            ->assertSuccessful();
-        $this->assertDatabaseHas('raffle', ['id' => '1']);
-            ->assertTrue(contains('id', '1'));
-        
-        $response = $this->get(action([HistorialController::class, 'historialdetalle'], $listaRaffle->id));
-        dd($response);*/
-        
-        /*$response->assertViewHasAll([
-            'id' => '1',
-            'rut' => '7651222',
-        ]);*/
     }
 }
 

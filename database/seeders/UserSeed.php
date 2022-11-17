@@ -20,7 +20,7 @@ class UserSeed extends Seeder
             'name' => 'Manolo Sanchéz',
             'rut' => '105635677',
             'username' => 'Admin',
-            'email' => 'Admin@gmail.com',
+            'email' => 'sorteotps2@gmail.com',
             'password' => '12345678', // 12345678
             'cargo' => 'Administrador del sistema',
         ])->assignRole('Admin');

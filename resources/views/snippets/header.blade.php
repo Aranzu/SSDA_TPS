@@ -25,7 +25,7 @@
                             <li><a class="dropdown-item" href="/login">Iniciar sesión</a></li>
                             @endguest
                             @auth
-                            <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
+                            <li><a class="dropdown-item blue_tps" href="/logout">Cerrar sesión</a></li>
                             @endauth
                         </ul>
                     </li>

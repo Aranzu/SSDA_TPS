@@ -1,60 +1,51 @@
 @extends('index.index_master')
 @section('content')
     @auth
-    <div class="container-fluid">
-        <div class="row flex-nowrap">
-            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100 text-white">
-                        <span class="fs-5 d-none d-sm-inline font_24 pt-5 pb-3">Bienvenido, {{auth()->user()->name ?? auth()->user()->username}}</span>
-                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                        @can('admin.manage')
-                        <li class="nav-item pt-4">
-                                <i class="fa-solid fa-screwdriver-wrench big_icons"></i><span class="ms-1 d-none d-sm-inline font_20">Administración</span>
-                        </li>
-                        <li>
-                            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                <i class="fa-solid fa-user-gear big_icons"></i><span class="ms-1 d-none d-sm-inline font_20">Gestionar usuarios</span> </a>
-                            <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                                <li class="w-100">
-                                    <a href="/register" class="nav-link px-0"><i class="fa-solid fa-user-plus big_icons"></i><span class="d-none d-sm-inline font_18"> Crear Usuarios</span></a>
+    <div class="container-fluid height_class">
+        <div class="row flex-nowrap height_class">
+            <div class="col-auto px-0 py-0 border-0" style="background-color: #144578;">
+                <div id="sidebar" class="collapse collapse-horizontal show">
+                    <div id="sidebar-nav" class="list-group border-0 rounded-none">
+                        <div class="p-2 pb-4">
+                            <a href="/home" class="text-decoration-none"><h4 class="text-white"><i class="fa-sharp fa-solid fa-house me-2"></i>Operaciones Disponibles</h4></a>
+                        </div>
+                        <ul class="list-group">
+                            @can('admin.manage')
+                                <div class="p-2">
+                                    <h4 class="text-white"><i class="fa-solid fa-screwdriver-wrench big_icons me-2"></i><span class="font_20">Administración</span></h4>
+                                </div>
+                                <li class="list-group-item">
+                                    <a href="/register" class="text-decoration-none blue_tps"><i class="fa-solid fa-user-plus me-2 big_icons"></i><span class="font_18">Crear Usuarios</span></a> </li>
+                                <li class="list-group-item">
+                                    <a href="/showUsers" class="text-decoration-none blue_tps"><i class="fa-solid fa-user-pen me-2 big_icons"></i><span class="font_18">Ver y Editar Usuarios</span></a> </li>
+                                <li class="list-group-item">
+                                    <a href="/stats" class="text-decoration-none blue_tps"><i class="fa-solid fa-chart-pie me-2 big_icons"></i><span class="font_18">Estadísticas</span></a> </li>
+                                <li class="list-group-item">
+                                    <a href="/manage_emails" class="text-decoration-none blue_tps"><i class="fa-solid fa-envelope-open-text me-2 big_icons"></i><span class="font_18">Agregar Destinatarios</span></a> </li>
+                            @endcan
+                            @can('operator.manage')
+                                <div class="p-2">
+                                    <h4 class="text-white"><i class="fa-sharp fa-solid fa-ticket me-2 big_icons"></i><span class="font_20">Gestionar Sorteos</span></h4>
+                                </div>
+                                <li class="list-group-item">
+                                    <a href="/raffle_auto" class="text-decoration-none blue_tps"><i class="fa-solid fa-address-book me-2 big_icons"></i><span class="font_18">Sorteo Automatizado</span></a>
                                 </li>
-                                <li>
-                                    <a href="/showUsers" class="nav-link px-0"><i class="fa-solid fa-user-pen big_icons"></i><span class="d-none d-sm-inline font_18"> Ver Usuarios</span></a>
+                                <li class="list-group-item">
+                                    <a href="/raffle_manual" class="text-decoration-none blue_tps"><i class="fa-solid fa-address-book me-2 big_icons"></i><span class="font_18">Sorteo Manual</span></a>
                                 </li>
-                            </ul>
-                        </li>
-                        @endcan
-                        @can('operator.manage')
-                        <li class="nav-item pt-4">
-                            <i class="fa-solid fa-user-tie big_icons"></i><span class="ms-1 d-none d-sm-inline font_20">Funcionarios</span>
-                        </li>
-                        <li>
-                            <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                                <i class="fa-sharp fa-solid fa-ticket big_icons"></i><span class="ms-1 d-none d-sm-inline font_20">Gestionar Sorteos</span></a>
-                            <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                                <li class="w-100">
-                                    <a href="/raffle_auto" class="nav-link px-0"><i class="fa-solid fa-clipboard-check big_icons"></i><span class="d-none d-sm-inline font_18"> Sorteo automatizado</span></a>
+                                <li class="list-group-item">
+                                    <a href="/historial" class="text-decoration-none blue_tps"><i class="fa-solid fa-calendar-days me-2 big_icons"></i><span class="font_18">Historial de Sorteos</span></a>
                                 </li>
-                                <li>
-                                    <a href="/raffle_manual" class="nav-link px-0"><i class="fa-solid fa-clipboard-list big_icons"></i><span class="d-none d-sm-inline font_18"> Sorteo Manual</span></a>
-                                </li>
-                                <li>
-                                    <a href="/historial" class="nav-link px-0">
-                                        <i class="fa-solid fa-calendar-days big_icons"></i><span class="d-none d-sm-inline font_18"> Historial de sorteos</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link px-0 align-middle">
-                                <i class="fa-sharp fa-solid fa-circle-plus big_icons"></i><span class="ms-1 d-none d-sm-inline font_20"> Extras</span> </a>
-                        </li>
-                        @endcan
-                    </ul>
-                    <hr>
+                            @endcan
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="col py-5" style="background-color: #eee">
-                @yield('content_home')
+            <div class="col ps-md-2 pt-2">
+                <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" class="border rounded-3 p-1 text-decoration-none" style="font-size: 45px;  color:#144578;"><i class="bi bi-list"></i></a>
+                <div class="pt-4 pb-5">
+                    @yield('content_home')
+                </div>
             </div>
         </div>
     </div>

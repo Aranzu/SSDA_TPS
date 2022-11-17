@@ -18,10 +18,23 @@ li, a, button, footer {
 footer{
     background-color: #144578;
 }
-#login_parameters{
+.background_main_image{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+#reset_password_parameters{
+    background-color: #eee!important;
+}
+#reset_password_card{
+    max-width: 700px;;
+}
+#Main_content_boxes{
+    min-height:940px;
+    background-color: #eee;
+}
+.height_class{
+    min-height:940px;
 }
 .blue_tps{
     color: #144578;
@@ -66,8 +79,14 @@ select, option, input::placeholder, input{
     color: #144578!important;
 }
 .btn{
+    border-radius: 25px;
     background-color: #144578;
     border-color: #144578;
+}
+.btn-clear-state{
+    border-radius: 0px!important;
+    border-radius: transparent!important;
+    border-color: transparent!important;
 }
 .link-secondary{
     color: white!important;
@@ -91,13 +110,16 @@ select, option, input::placeholder, input{
     font-size:32px;
 }
 .font_20{
-    font-size: 18px;
+    font-size: 20px;
 }
 .font_18{
-    font-size: 16px;
+    font-size: 18px;
 }
 .font_24{
     font-size: 24px!important;
+}
+.font_25{
+    font-size: 25px!important;
 }
 .font_14{
     font-size: 20px!important;
@@ -113,8 +135,6 @@ select, option, input::placeholder, input{
 .nav-link{
     color: white!important;
 }
-
-
 /*Testing*/
 .range {
 display: flex;
@@ -139,16 +159,16 @@ justify-content: center;
 }
 
 .form-group label {
-text-transform: uppercase;
-font-size: .7rem;
-color: #222;
+text-transform: none;
+font-size: 16px;
+color: #144578;
 margin-bottom: 5px;
 }
 
 .form-group span {
-font-size: 2rem;
+font-size: 1rem;
 font-weight: 600;
-color: #3c3b3b;
+color: #144578;
 }
 
 .range__slider label {
@@ -157,6 +177,7 @@ margin-bottom: 10px;
 
 .range__slider [type="range"] {
 width: 100%;
+appearance: none;
 -webkit-appearance: none;
 height: 13px;
 border-radius: 6px;
@@ -206,8 +227,8 @@ border: 0;
 
 /*Tabla Scroll*/
 .table-responsive {
-    min-height: 400px;
-    max-height:800px;
+    min-height:150px;
+    max-height:400px;
 }
 /*Testing Sweet alert buttons*/
 .swal2-styled.swal2-confirm{
@@ -216,4 +237,55 @@ border: 0;
 
 .swal-button:focus {
     box-shadow: none;
+}
+.red_color{
+    color: #e71528;
+}
+i .big-icon{
+    font-size: 50px!important;
+}
+.button-style{
+    padding-right: 6rem!important;
+    padding-left: 6rem!important;
+}
+
+/*Testing email check*/
+#show-emails>ul{
+    list-style: none;
+    margin-left: 0;
+    display: inline-block;
+    padding-inline-start: 0;
+    margin-top: 1rem;
+}
+#show-emails>ul>li{
+    padding: 5px 10px;
+    margin-bottom: 3px;
+}
+.remove{
+    padding: 0 .6rem;
+    cursor: pointer;
+    float: right
+}
+.email-error{
+    margin: 0.8rem;
+    /*padding: .7rem;*/
+    color: #ff0000;
+}
+
+.hide_style{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: none;
+    background-color: transparent;
+}
+.hide_style:focus{
+    outline: none;
+}
+
+.swal2-loader{
+    border-color:#144578 rgba(0,0,0,0) #144578 rgba(0,0,0,0)!important;
+}
+.remclass2{
+    font-size: 2rem!important;
 }

@@ -3,10 +3,8 @@
 namespace Tests\Unit;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Testing\Fluent\AssertableJson;
 
 class IntegrationTest extends TestCase
 {
@@ -83,42 +81,5 @@ class IntegrationTest extends TestCase
         $real_data = json_encode(array($data));
         $this->assertEquals($expected_data, $real_data);
         
-        /*$response
-            ->assertJson(fn (AssertableJson $json) =>
-                $json
-                    ->where('nombre', 'Khalani Mayo')
-                    ->where('rut', 92547928)
-                    ->etc()
-        );*/
-        //dd($trabajador);
-        //dd($data);
-        //dd($response);
-        //$this->assertEquals($data, $trabajador);
-        //$response->assertJson(fn (AssertableJson $json) =>
-        //    $json->has('92547928'));
-        /*$data
-            ->assertJsonStructure([
-                'nombre',
-                "apellido",
-                "segundoApellido",
-                "rut",
-                "diasHabiles",
-                "tipo",
-                "inicio",
-                "termino",
-                "estado",
-                "cargo",
-                "division",
-                "departamento",
-                "area"
-            ])
-            ->assertJson([
-                'message' => "The given data was invalid.",
-                'data' => [
-                    "address" => [
-                        "The address field is required."
-                    ],
-                ]
-            ]);*/
     }
 }

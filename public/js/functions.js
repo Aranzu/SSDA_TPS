@@ -37,18 +37,23 @@ class Slider {
     }
   }
 
-  let rangeElement = document.querySelector('.range [type="range"]')
-  let valueElement = document.querySelector('.range .range__value span')
+let rangeElement = document.querySelector('.range [type="range"]')
+let valueElement = document.querySelector('.range .range__value span')
 
-  let options = {
-    min: 1,
-    max: 100
-  }
+let options = {
+min: 1,
+max: 100
+}
 
-  if (rangeElement) {
-    let slider = new Slider(rangeElement, valueElement, options)
+if (rangeElement) {
+let slider = new Slider(rangeElement, valueElement, options)
 
-    slider.init()
-  }
+slider.init()
+}
+
+//Checkbox para seleccionar todos los input
+$("#checkAll").click(function(){
+    $('input:checkbox').not(this).prop('checked', this.checked);
+});
 
 

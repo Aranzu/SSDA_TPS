@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 class UpdateUserTest extends TestCase
 {
-    use DatabaseTransactions;
-    use DatabaseMigrations;
+    //Para esta prueba se requiere crear los roles. Antes de ejecutar la prueba en la terminal ejecutar: php artisan migrate:fresh --seed
+    
+    //use RefreshDatabase;
 
     public function test_update_user()
     {
@@ -28,17 +29,21 @@ class UpdateUserTest extends TestCase
             'email'     =>'manuel@example.com',
             'password'  =>'password',
             'cargo'     =>'RRHH',
+        ])->assignRole('Admin');
 
+        $this->actingAs($user)->post("/updateUser/{$user->id}",[
+            'name'      =>'Rodrigo Diaz',
+            'username'  =>'Rdiaz2342',
+            'email'     =>'rdiaz@example.com',
+            'cargo'     =>'RRHH',
         ]);
 
-        $this->post("/updateUser/{$user->id}",[
+        $this->assertDatabaseHas('users', [
             'name'      =>'Rodrigo Diaz',
-            'rut'       =>'25615613',
-            'username'  =>'Rdiaz',
+            'username'  =>'Rdiaz2342',
             'email'     =>'rdiaz@example.com',
-            'password'  =>'password',
             'cargo'     =>'RRHH',
-        ])->assertRedirect("/");
+        ]);
 
     }
 }

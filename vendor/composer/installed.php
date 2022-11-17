@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'db8c07fe430350cb271faef3305771f58b9d4acf',
+        'reference' => '4f08d9bb9337b5b62a16669afd395d043415cae8',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -379,6 +379,15 @@
                 0 => '*',
             ),
         ),
+        'laravel-lang/lang' => array(
+            'pretty_version' => '10.0.0',
+            'version' => '10.0.0.0',
+            'reference' => '9318ef2dc0ea2dd42edbe35b94796307b62f8b9e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel-lang/lang',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'laravel/dusk' => array(
             'pretty_version' => 'v7.1.1',
             'version' => '7.1.1.0',
@@ -400,7 +409,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'db8c07fe430350cb271faef3305771f58b9d4acf',
+            'reference' => '4f08d9bb9337b5b62a16669afd395d043415cae8',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
